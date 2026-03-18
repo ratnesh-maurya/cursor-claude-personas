@@ -1,181 +1,214 @@
 # cursor-claude-personas
 
-Role-based AI persona packs for coding workflows.
+> Role-based AI persona packs for Claude Code, Cursor, and VS Code — copy a folder, unlock domain-tuned AI behavior.
 
-Inspiration: https://github.com/sickn33/antigravity-awesome-skills
+[![CI](https://github.com/ratnesh-maurya/cursor-claude-personas/actions/workflows/ci.yml/badge.svg)](https://github.com/ratnesh-maurya/cursor-claude-personas/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## Why this repo
+Inspired by [antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills).
 
-- Portable persona packs you can copy directly into any project.
-- Mirrored `.claude` and `.cursor` structures for predictable behavior.
-- Wide role coverage across engineering, product, design, security, and growth.
-- Minimal setup: copy folders, reopen session, start working.
+---
 
-## What this repo is
+## Table of Contents
 
-This repository contains persona folders (for example `senior-python-developer`, `security-engineer`, `ui-ux-designer`) that you can copy into another project.
+- [cursor-claude-personas](#cursor-claude-personas)
+  - [Table of Contents](#table-of-contents)
+  - [What this is](#what-this-is)
+  - [How it works](#how-it-works)
+  - [Quick start](#quick-start)
+    - [1. Browse available personas](#1-browse-available-personas)
+    - [2. Copy a persona into your project](#2-copy-a-persona-into-your-project)
+    - [3. Reopen your editor or chat session](#3-reopen-your-editor-or-chat-session)
+  - [All personas](#all-personas)
+  - [Compatibility matrix](#compatibility-matrix)
+  - [Auto-skill router (no slash commands)](#auto-skill-router-no-slash-commands)
+  - [Repository structure](#repository-structure)
+  - [GitHub Actions](#github-actions)
+  - [Validation](#validation)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-Each persona includes:
+---
 
-- `.claude` configs
-- `.cursor` configs
+## What this is
 
-The goal is simple: copy a persona's hidden folders to your project root and get domain-tuned AI behavior.
+**cursor-claude-personas** is a library of portable persona packs you copy directly into any project. Each persona is a pair of hidden config directories (`.claude/` and `.cursor/`) pre-loaded with role-specific rules, skills, and agent instructions.
 
-## Choose a persona quickly
+**Why it exists:**
 
-| Persona | Best for | Copy path | Notes |
-|---|---|---|---|
-| `senior-frontend-developer` | React/TypeScript UI systems | `senior-frontend-developer/` | UI architecture and frontend quality |
-| `senior-python-developer` | APIs, automation, data workflows | `senior-python-developer/` | Strong backend and scripting focus |
-| `security-engineer` | Threat modeling, hardening, audits | `security-engineer/` | Security-first guidance |
-| `system-architect` | Service boundaries and scalability | `system-architect/` | High-level design and tradeoffs |
-| `technical-writer` | Docs, onboarding, API clarity | `technical-writer/` | Documentation quality and consistency |
+- Portable — copy any persona folder into any project; no install required
+- Mirrored `.claude` / `.cursor` structures for consistent behavior across tools
+- 38 roles covering engineering, product, design, security, data, and growth
+- Minimal friction: copy folders, reopen session, start working
 
-Browse all persona folders from repo root:
+---
+
+## How it works
+
+```text
+cursor-claude-personas/
+└── senior-python-developer/
+    ├── .claude/
+    │   ├── rules/          <- always-on instructions for Claude Code
+    │   └── skills/         <- slash-command or auto-triggered skill docs
+    └── .cursor/
+        ├── rules/          <- Cursor rules (always-on)
+        └── skills/         <- Cursor skill docs
+```
+
+When you copy `.claude/` or `.cursor/` into your project root, the AI tool loads those files at session start. Rules run automatically; skills can be invoked by name or auto-triggered by the router rule.
+
+---
+
+## Quick start
+
+### 1. Browse available personas
 
 ```bash
 ls -1
 ```
 
-## Quick usage
-
-### 1) Pick a persona
-
-```bash
-ls -1
-```
-
-### 2) Copy into your target project
+### 2. Copy a persona into your project
 
 ```bash
 TARGET=/absolute/path/to/your-project
-PERSONA=senior-frontend-developer
+PERSONA=senior-python-developer
 
 cp -R "$PERSONA/.claude" "$TARGET/"
 cp -R "$PERSONA/.cursor" "$TARGET/"
 ```
 
-### 3) Reopen your editor/chat session
+### 3. Reopen your editor or chat session
 
-Most tools reload instructions at session start.
+Most tools reload instructions at session start. In Claude Code, `/reset` also reloads.
 
-## “I don’t want to type /skills”
+> **Tip:** If you are unsure which persona to pick, start with `senior-python-developer` for backend/automation work or `senior-frontend-developer` for UI work.
 
-Some tools expose skills as slash-commands, but you can make behavior effectively automatic by relying on **rules** that tell the agent to proactively consult local skill docs.
+---
 
-- **Cursor**: copy `.cursor/` into your project root. Cursor rules are always-on, so a rule can instruct the agent to read matching `SKILL.md` files without you typing `/...`.
-- **Claude-style**: copy `.claude/` into your project root. Rules can also instruct automatic skill consultation.
+## All personas
 
-This repo now includes an **auto-skill router rule** you can copy:
+| Persona folder | Best for |
+| --- | --- |
+| `3d-frontend-developer` | Three.js, WebGL, 3D UI |
+| `ai-agent-developer` | LLM agents, tool use, orchestration |
+| `ai-ml-engineer` | Model training, pipelines, MLOps |
+| `azure-developer` | Azure services, ARM/Bicep, AKS |
+| `blockchain-web3-developer` | Smart contracts, DeFi, Web3 tooling |
+| `blog-website-developer` | Content sites, CMS, static generators |
+| `data-engineer` | Pipelines, dbt, Spark, warehouses |
+| `devops-cloud-engineer` | CI/CD, Kubernetes, IaC, observability |
+| `ecommerce-specialist` | Shopify, WooCommerce, checkout flows |
+| `fullstack-saas-mvp` | Rapid SaaS prototyping, full-stack |
+| `functional-programming` | Haskell, Clojure, FP patterns |
+| `game-developer` | Unity, Godot, game loops |
+| `health-tech-developer` | FHIR, HL7, medical data systems |
+| `legal-finance-analyst` | Contracts, compliance, financial models |
+| `marketing-automation` | Email, CRM integrations, analytics |
+| `mobile-developer` | React Native, Flutter, iOS/Android |
+| `n8n-automation-specialist` | n8n workflows, low-code automation |
+| `odoo-erp-specialist` | Odoo modules, ERP customization |
+| `open-source-maintainer` | OSS governance, reviews, releases |
+| `platform-integrations` | APIs, webhooks, third-party services |
+| `product-manager` | Roadmaps, specs, user stories |
+| `qa-testing-engineer` | Test strategy, automation, coverage |
+| `saas-startup-founder` | GTM, metrics, early-stage decisions |
+| `security-engineer` | Threat modeling, hardening, audits |
+| `senior-dotnet-developer` | C#, ASP.NET Core, Azure |
+| `senior-elixir-developer` | Elixir, Phoenix, OTP |
+| `senior-frontend-developer` | React, TypeScript, frontend architecture |
+| `senior-golang-developer` | Go, microservices, concurrency |
+| `senior-java-developer` | Java, Spring Boot, enterprise patterns |
+| `senior-python-developer` | Python, APIs, automation, data |
+| `senior-rust-developer` | Rust, systems programming, WASM |
+| `seo-specialist` | Technical SEO, Core Web Vitals, schema |
+| `system-architect` | Service boundaries, scalability, design |
+| `system-designer` | Low-level system design, algorithms |
+| `technical-writer` | Docs, onboarding, API clarity |
+| `ui-ux-designer` | Design systems, accessibility, UX |
+| `voice-ai-developer` | Voice interfaces, TTS, STT, ASR |
+| `wordpress-specialist` | WordPress, WooCommerce, theme dev |
 
-- `.cursor/rules/rules--auto-skill-router.md`
-- `.claude/rules/rules--auto-skill-router.md`
-
-If you’re copying a persona folder, you can also copy these two files into the target project’s `.cursor/rules/` and `.claude/rules/` to get the same “no slash commands” behavior.
+---
 
 ## Compatibility matrix
 
-| Tool | Rules | Skills | Agents | Recommended copy |
-|---|---|---|---|---|
-| Claude Code | Yes (`.claude/rules`) | Yes (`.claude/skills`) | Yes (`.claude/agents`, when present) | `.claude` |
-| Cursor | Yes (`.cursor/rules`) | Yes (`.cursor/skills`) | Through project instruction files/patterns | `.cursor` + `.claude` |
-| VS Code (GitHub Copilot) | Uses compatible instruction paths | Works with compatible skill/rule layouts | Through Copilot customization flow | `.claude` (plus optional `.github/copilot-instructions.md`) |
+| Tool | Config path | Rules | Skills |
+| --- | --- | --- | --- |
+| **Claude Code** | `.claude/` | `.claude/rules/` (always-on) | `.claude/skills/` |
+| **Cursor** | `.cursor/` | `.cursor/rules/` (always-on) | `.cursor/skills/` |
+| **VS Code (Copilot)** | `.claude/` or `.github/copilot-instructions.md` | Compatible instruction paths | Works via compatible skill layouts |
 
-## Usage by tool
+**Recommended copy per tool:**
 
-### Claude Code
+- Claude Code only → copy `.claude/`
+- Cursor only → copy `.cursor/`
+- VS Code Copilot → copy `.claude/` and optionally add `.github/copilot-instructions.md` in target project
 
-- Uses `.claude/CLAUDE.md`, `.claude/rules`, `.claude/skills`, `.claude/agents`
-- Minimal setup: copy only `.claude`
+---
 
-### Cursor
+## Auto-skill router (no slash commands)
 
-- Uses `.cursor/rules` and `.cursor/skills`
-- Recommended setup: copy both `.claude` and `.cursor`
+Some tools expose skills as slash commands (e.g., `/commit`, `/pr-writer`). You can make behavior automatic instead by using the **auto-skill router rule**, which tells the agent to proactively read matching `SKILL.md` files without requiring a slash command.
 
-### VS Code (GitHub Copilot)
+Two copies are included in this repo:
 
-- Works with Claude-compatible paths in VS Code customization flow
-- Recommended minimal setup for this repo style: copy `.claude`
-- If you also want native Copilot repository instructions, add `.github/copilot-instructions.md` in your target project
+```text
+.cursor/rules/rules--auto-skill-router.md
+.claude/rules/rules--auto-skill-router.md
+```
 
-## Starter personas (recommended)
+Copy these into your target project's rules directory alongside the persona to enable automatic skill consultation.
 
-If you are not sure where to begin, start with one of these:
+---
 
-1. `senior-frontend-developer` for modern web frontend work
-2. `senior-python-developer` for general backend and automation
-3. `security-engineer` for security-sensitive projects
-4. `system-architect` for greenfield system design
-5. `technical-writer` for docs-heavy repositories
-
-## Applicable repository skills
-
-This repo includes many root-level skills in `.claude/skills`. The most applicable skills for maintaining this repository are:
-
-- `readme`
-- `wiki-changelog`
-- `documentation`
-- `documentation-templates`
-- `skill-creator`
-- `skill-improver`
-- `lint-and-validate`
-- `requesting-code-review`
-- `commit`
-- `pr-writer`
-
-## Repository shape
+## Repository structure
 
 ```text
 cursor-claude-personas/
-├── .claude/                   # Root reusable skills/rules
-├── 3d-frontend-developer/
-├── ai-ml-engineer/
-├── ... 27 more persona folders
-└── wordpress-specialist/
-```
-
-Persona folder shape:
-
-```text
-<persona>/
-├── .claude/
+├── .claude/                      # Root reusable skills and rules (apply to this repo itself)
 │   ├── rules/
 │   └── skills/
-└── .cursor/
-    ├── rules/
-    └── skills/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── workflows/
+│   └── PULL_REQUEST_TEMPLATE.md
+├── <persona-folder>/             # One folder per persona (38 total)
+│   ├── .claude/
+│   │   ├── rules/
+│   │   └── skills/
+│   └── .cursor/
+│       ├── rules/
+│       └── skills/
+├── site/                         # GitHub Pages site (deployed via deploy-pages.yml)
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── SECURITY.md
+└── SUPPORT.md
 ```
 
-## Automation and GitHub Actions
+---
 
-This repo includes a small set of GitHub Actions workflows under `.github/workflows`:
+## GitHub Actions
 
-- **`ci.yml`**: Basic CI pipeline that checks out the code, sets up Node.js, installs npm dependencies if a `package.json` is present, and runs lint/tests when configured.
-- **`deploy-pages.yml`**: Deploys the `site/` directory to GitHub Pages on pushes to `main`.
-- **`labels-and-comments.yml`**: Adds labels to pull requests based on their title keywords and posts a friendly guidance comment on first-time contributor PRs (no AI involved).
-- **`maintenance.yml`**: Runs weekly to mark long-inactive issues/PRs as stale and close them after a grace period, with clear explanatory comments.
+| Workflow | Trigger | Purpose |
+| --- | --- | --- |
+| `ci.yml` | Push / PR | Lint and test (skips gracefully if unconfigured) |
+| `deploy-pages.yml` | Push to `main` | Deploy `site/` to GitHub Pages |
+| `labels-and-comments.yml` | PR open/edit | Auto-label by title keywords; welcome first-time contributors |
+| `maintenance.yml` | Weekly | Mark stale issues/PRs; close after grace period |
 
-All of these workflows are intentionally simple and AI-free so they can run in any fork without extra configuration.
+All workflows are AI-free and run without extra configuration in forks.
 
-## GitHub graphs and activity
+---
 
-- **Contributors & commit history**: View the GitHub contributors graph for this repo at  
-  `https://github.com/OWNER/cursor-claude-personas/graphs/contributors`  
-  (replace `OWNER` with the actual GitHub username or org if you’ve forked this repository).
+## Validation
 
-- **Optional README activity graph embed (for forks)** – you can add a live activity graph badge to your own fork’s README:
-
-```markdown
-[![GitHub activity graph](https://github-readme-activity-graph.vercel.app/graph?username=OWNER&repo=cursor-claude-personas&theme=github-compact)](https://github.com/OWNER/cursor-claude-personas/graphs/contributors)
-```
-
-Replace `OWNER` with your GitHub username or organization. You can also tweak the `theme` parameter; see the `github-readme-activity-graph` project for more theme options.
-
-## Validation commands
-
-Check `.claude` and `.cursor` parity for every persona:
+Check `.claude` / `.cursor` parity for every persona:
 
 ```bash
 for d in */; do
@@ -186,16 +219,35 @@ for d in */; do
 done
 ```
 
-Count skills in root shared library:
+Count skills in the root shared library:
 
 ```bash
 find .claude/skills -name 'SKILL.md' -type f | wc -l
 ```
 
-## Open source docs
+List all personas:
 
-- Contributing guide: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Code of conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-- Security policy: [SECURITY.md](SECURITY.md)
-- Changelog: [CHANGELOG.md](CHANGELOG.md)
-- License: [LICENSE](LICENSE)
+```bash
+ls -d */ | grep -v '^\.' | grep -v '^site'
+```
+
+---
+
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
+
+Quick checklist for persona contributions:
+
+1. Fork → branch → change → PR
+2. Keep `.claude` and `.cursor` content synchronized
+3. Use clear skill names and frontmatter
+4. Run the parity validation script before opening a PR
+
+For bugs, questions, or ideas, open an [issue](https://github.com/ratnesh-maurya/cursor-claude-personas/issues).
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).

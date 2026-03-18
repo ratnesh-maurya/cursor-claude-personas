@@ -1,37 +1,28 @@
 # Code of Conduct
 
-## Our Pledge
+This project follows the [Contributor Covenant]([contributor-covenant.org/version/2/1/code_of_conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)) v2.1.
 
-We are committed to making participation in this project a harassment-free experience for everyone.
+## Summary
 
-## Our Standards
+We are committed to providing a welcoming, harassment-free experience for all contributors regardless of background or experience level.
 
-Examples of behavior that contributes to a positive environment include:
+## Standards
 
-- being respectful and constructive
-- giving and accepting feedback gracefully
-- focusing on what is best for the community and project
-- showing empathy to other contributors
+Positive behavior includes being respectful, giving constructive feedback, focusing on what benefits the community, and showing empathy toward others.
 
-Examples of unacceptable behavior include:
-
-- harassment, insults, or discriminatory language
-- personal attacks or trolling
-- publishing others' private information without permission
-- any conduct that is inappropriate in a professional setting
-
-## Enforcement Responsibilities
-
-Project maintainers are responsible for clarifying and enforcing this Code of Conduct and may take appropriate action in response to unacceptable behavior.
-
-## Scope
-
-This Code of Conduct applies within all project spaces, including issues, pull requests, discussions, and related communication channels.
-
-## Reporting
-
-To report a violation, open a private security-style report using the guidance in [SECURITY.md](SECURITY.md), or contact maintainers through repository communication channels.
+Unacceptable behavior includes harassment, personal attacks, discriminatory language, and publishing others' private information without consent.
 
 ## Enforcement
 
-Maintainers may remove, edit, or reject comments, commits, code, issues, or other contributions that violate this Code of Conduct.
+Project maintainers will enforce this Code of Conduct and may remove, edit, or reject contributions that violate it. Repeated or severe violations may result in a temporary or permanent ban.
+
+## Reporting
+
+To report a violation, open a [GitHub issue](https://github.com/ratnesh-maurya/cursor-claude-personas/issues) marked as private/security, or follow the process described in [SECURITY.md](SECURITY.md).
+
+Maintainers are obligated to maintain confidentiality about the reporter.
+
+## Full text
+
+The full Contributor Covenant v2.1 is available at:
+[contributor-covenant.org/version/2/1/code_of_conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)

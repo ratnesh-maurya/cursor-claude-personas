@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a new persona or improvement to an existing one
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Describe what you have in mind.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Request type
+      options:
+        - New persona
+        - Improve existing persona
+        - New skill for existing persona
+        - Repository tooling / workflow
+        - Documentation
+    validations:
+      required: true
+
+  - type: input
+    id: persona
+    attributes:
+      label: Persona folder (if applicable)
+      placeholder: "e.g. senior-rust-developer or leave blank for new persona"
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the request
+      description: What would you like to see? What problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches you considered?
