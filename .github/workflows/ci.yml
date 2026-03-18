@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f package.json ]; then
+            npm install
+          else
+            echo "No package.json found, skipping Node setup."
+          fi
+
+      - name: Lint (if configured)
+        run: |
+          if npx --yes --silent eslint --version >/dev/null 2>&1; then
+            npx eslint .
+          else
+            echo "ESLint not configured; skipping lint."
+          fi
+        continue-on-error: true
+
+      - name: Run tests (if configured)
+        run: |
+          if npm run | grep -q " test"; then
+            npm test
+          else
+            echo "No npm test script found; skipping tests."
+          fi
+
