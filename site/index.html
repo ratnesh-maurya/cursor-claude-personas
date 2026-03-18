@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cursor Claude Personas</title>
+    <title>cursor-claude-personas — Role-based AI persona packs</title>
     <meta
       name="description"
-      content="A static GitHub Pages website to explore the Cursor Claude Personas collection."
+      content="38 portable persona packs for Claude Code, Cursor, and VS Code. Copy a folder into any project to unlock domain-tuned AI behavior — frontend, backend, DevOps, security, AI, and more."
     />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="cursor-claude-personas" />
+    <meta property="og:description" content="38 portable AI persona packs for Claude Code, Cursor, and VS Code. Copy one folder, get domain-tuned AI." />
+    <meta property="og:url" content="https://ratnesh-maurya.github.io/cursor-claude-personas/" />
+    <meta property="og:image" content="https://ratnesh-maurya.github.io/cursor-claude-personas/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="cursor-claude-personas" />
+    <meta name="twitter:description" content="38 portable AI persona packs for Claude Code, Cursor, and VS Code." />
+    <meta name="twitter:image" content="https://ratnesh-maurya.github.io/cursor-claude-personas/images/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,75 +38,127 @@
     <div class="noise" aria-hidden="true"></div>
 
     <header class="hero">
-      <p class="eyebrow">Cursor Claude Personas Collective</p>
-      <h1>Cursor Claude Personas</h1>
+      <img src="./images/logo.svg" alt="cursor-claude-personas logo" class="hero-logo" width="96" height="96" />
+      <p class="eyebrow">38 Personas &middot; Claude Code &middot; Cursor &middot; VS Code</p>
+      <h1>cursor-claude-personas</h1>
       <p class="lede">
-        We design specialists as instruments: opinionated, practical, and
-        deeply craft-oriented. Each persona is a focused mind for one kind of
-        high-leverage work.
+        Portable AI persona packs you copy directly into any project.
+        Each persona is a pair of config folders pre-loaded with role-specific rules,
+        skills, and agent instructions — frontend, backend, DevOps, security, AI, and more.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#explore">Enter The Library</a>
+        <a class="btn btn-primary" href="#explore">Browse Personas</a>
+        <a
+          class="btn btn-star"
+          href="https://github.com/ratnesh-maurya/cursor-claude-personas"
+          target="_blank"
+          rel="noreferrer"
+        >Star on GitHub</a>
         <a
           class="btn btn-ghost"
           href="https://github.com/ratnesh-maurya/cursor-claude-personas"
           target="_blank"
           rel="noreferrer"
-          >View Source</a
-        >
+        >View Source</a>
       </div>
     </header>
 
     <main>
+
+      <!-- Principles -->
       <section class="panel manifesto" id="ideology" aria-labelledby="ideology-heading">
-        <h2 id="ideology-heading">Ideology</h2>
+        <h2 id="ideology-heading">Principles</h2>
         <p class="manifesto-lede">
-          Software ships faster when intent is explicit. These personas are not
-          generic assistants. They are domain-shaped collaborators with strong
-          defaults, clear taste, and execution discipline.
+          Software ships faster when intent is explicit. These personas are not generic assistants —
+          they are domain-shaped collaborators with strong defaults, clear taste, and execution discipline.
         </p>
         <div class="principles-grid">
           <article class="principle-card">
             <p class="principle-index">01</p>
             <h3>Depth Over Breadth</h3>
-            <p>One sharp specialist beats five vague generalists.</p>
+            <p>One sharp specialist beats five vague generalists. Pick the persona closest to your current problem.</p>
           </article>
           <article class="principle-card">
             <p class="principle-index">02</p>
             <h3>Action Over Theater</h3>
-            <p>Plans matter only when they become concrete files and tests.</p>
+            <p>Plans matter only when they become concrete files, tests, and working code — not long explanations.</p>
           </article>
           <article class="principle-card">
             <p class="principle-index">03</p>
             <h3>Craft Over Templates</h3>
-            <p>Each role encodes judgment, not copy-pasted boilerplate.</p>
+            <p>Each role encodes judgment and taste, not copy-pasted boilerplate you have to clean up afterward.</p>
           </article>
           <article class="principle-card">
             <p class="principle-index">04</p>
             <h3>Systems Over Hacks</h3>
-            <p>Reusable workflows outlast one-off fixes.</p>
+            <p>Reusable rules and skills outlast one-off prompts. The behavior travels with your project.</p>
           </article>
         </div>
       </section>
 
+      <!-- How it works -->
       <section class="panel" aria-labelledby="method-heading">
-        <h2 id="method-heading">How This Collective Works</h2>
+        <h2 id="method-heading">How It Works</h2>
+        <p class="method-lede">Three steps, no install required.</p>
         <div class="method-grid">
           <article class="method-card">
-            <h3>Map Intent</h3>
-            <p>Pick a persona by problem shape, not by trend.</p>
+            <p class="method-index">1</p>
+            <h3>Pick a Persona</h3>
+            <p>Browse the library below. Filter by tag or search by technology. Find the role that matches your current work.</p>
           </article>
           <article class="method-card">
-            <h3>Route Skills</h3>
-            <p>Auto-load relevant playbooks and constraints for consistency.</p>
+            <p class="method-index">2</p>
+            <h3>Copy Two Folders</h3>
+            <p>Run one <code>cp</code> command to copy <code>.claude/</code> and <code>.cursor/</code> into your project root.</p>
           </article>
           <article class="method-card">
-            <h3>Build and Verify</h3>
-            <p>Implement quickly, then validate with commands and evidence.</p>
+            <p class="method-index">3</p>
+            <h3>Reopen Your Session</h3>
+            <p>Claude Code and Cursor reload instructions at session start. The persona is live immediately.</p>
           </article>
         </div>
       </section>
 
+      <!-- Quick install reference -->
+      <section class="panel install-panel" aria-labelledby="install-heading">
+        <h2 id="install-heading">Quick Install</h2>
+        <p class="install-lede">Replace <code>senior-python-developer</code> with any persona slug from the library below.</p>
+
+        <div class="install-steps">
+          <div class="install-step">
+            <p class="install-step-label">Claude Code</p>
+            <pre><code>TARGET=/path/to/your-project
+PERSONA=senior-python-developer
+
+cp -R "$PERSONA/.claude" "$TARGET/"</code></pre>
+          </div>
+
+          <div class="install-step">
+            <p class="install-step-label">Cursor</p>
+            <pre><code>TARGET=/path/to/your-project
+PERSONA=senior-python-developer
+
+cp -R "$PERSONA/.cursor" "$TARGET/"</code></pre>
+          </div>
+
+          <div class="install-step">
+            <p class="install-step-label">Both tools</p>
+            <pre><code>TARGET=/path/to/your-project
+PERSONA=senior-python-developer
+
+cp -R "$PERSONA/.claude" "$TARGET/"
+cp -R "$PERSONA/.cursor" "$TARGET/"</code></pre>
+          </div>
+        </div>
+
+        <p class="install-note">
+          Each persona also includes an <strong>auto-skill router rule</strong> — copy
+          <code>.claude/rules/rules--auto-skill-router.md</code> alongside the persona to get
+          automatic skill loading without typing slash commands.
+        </p>
+      </section>
+
+      <!-- Persona library -->
       <section class="panel" id="explore" aria-labelledby="explore-heading">
         <div class="explore-header">
           <h2 id="explore-heading">Persona Library</h2>
@@ -98,19 +167,39 @@
             <input
               id="search"
               type="search"
-              placeholder="Search by craft: frontend, security, devops, ml"
+              placeholder="Search by craft: frontend, security, devops, rust, ai…"
               autocomplete="off"
             />
           </div>
         </div>
 
+        <div id="tag-bar" class="tag-bar" aria-label="Filter by tag"></div>
+
         <p id="result-count" class="result-count"></p>
         <div id="cards" class="card-grid" aria-live="polite"></div>
       </section>
+
     </main>
 
+    <section class="star-banner" aria-label="Star this project">
+      <p class="star-banner-text">If this saves you time, help others find it.</p>
+      <a
+        class="btn btn-star btn-star--lg"
+        href="https://github.com/ratnesh-maurya/cursor-claude-personas"
+        target="_blank"
+        rel="noreferrer"
+      >Star on GitHub</a>
+    </section>
+
     <footer class="footer">
-      <p>Designed as a static, high-signal library for focused builders.</p>
+      <nav class="footer-links" aria-label="Project links">
+        <a href="https://github.com/ratnesh-maurya/cursor-claude-personas" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/ratnesh-maurya/cursor-claude-personas/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">Contributing</a>
+        <a href="https://github.com/ratnesh-maurya/cursor-claude-personas/blob/main/CHANGELOG.md" target="_blank" rel="noreferrer">Changelog</a>
+        <a href="https://github.com/ratnesh-maurya/cursor-claude-personas/blob/main/SECURITY.md" target="_blank" rel="noreferrer">Security</a>
+        <a href="https://github.com/ratnesh-maurya/cursor-claude-personas/blob/main/LICENSE" target="_blank" rel="noreferrer">MIT License</a>
+      </nav>
+      <p class="footer-note">Static library for focused builders. 38 personas, zero install.</p>
     </footer>
   </body>
 </html>

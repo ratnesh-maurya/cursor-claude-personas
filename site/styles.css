@@ -51,6 +51,14 @@ main,
   animation: rise 560ms ease-out both;
 }
 
+.hero-logo {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
 .eyebrow {
   font-size: 0.82rem;
   text-transform: uppercase;
@@ -116,6 +124,39 @@ a:focus-visible {
 
 .btn-ghost {
   background: rgba(255, 255, 255, 0.03);
+}
+
+.btn-star {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 194, 71, 0.5);
+  font-weight: 600;
+}
+
+.btn-star:hover {
+  background: rgba(255, 194, 71, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.star-banner {
+  width: min(1100px, 92vw);
+  margin: 1.5rem auto 0;
+  text-align: center;
+  padding: 2rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1.2rem;
+  background: linear-gradient(140deg, rgba(255, 194, 71, 0.04), rgba(57, 211, 223, 0.04));
+}
+
+.star-banner-text {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.btn-star--lg {
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
 }
 
 main {
@@ -196,10 +237,143 @@ main {
   background: rgba(255, 255, 255, 0.018);
 }
 
+.method-lede {
+  color: var(--muted);
+  margin: 0.4rem 0 0.8rem;
+}
+
+.method-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: rgba(255, 194, 71, 0.12);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
 .method-card p {
   margin-top: 0.4rem;
   color: var(--muted);
 }
+
+.method-card code {
+  font-size: 0.88rem;
+  background: rgba(255,255,255,0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* ── Install panel ──────────────────────────────────────────────── */
+
+.install-panel h2 {
+  margin-bottom: 0.2rem;
+}
+
+.install-lede {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.install-lede code {
+  font-size: 0.88rem;
+  background: rgba(255,255,255,0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.install-steps {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 1rem;
+}
+
+.install-step {
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  padding: 0.95rem;
+  background: var(--card);
+}
+
+.install-step-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.install-step pre {
+  margin: 0;
+  overflow-x: auto;
+}
+
+.install-step code {
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: 0.82rem;
+  color: var(--text);
+  white-space: pre;
+}
+
+.install-note {
+  color: var(--muted);
+  font-size: 0.93rem;
+  margin: 0;
+}
+
+.install-note code {
+  font-size: 0.82rem;
+  background: rgba(255,255,255,0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+.install-note strong {
+  color: var(--text);
+}
+
+/* ── Tag bar ────────────────────────────────────────────────────── */
+
+.tag-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.8rem 0 0.2rem;
+}
+
+.tag-btn {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 0.28rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
+  text-transform: lowercase;
+}
+
+.tag-btn:hover {
+  border-color: rgba(255, 194, 71, 0.5);
+  color: var(--text);
+}
+
+.tag-btn--active {
+  background: rgba(255, 194, 71, 0.12);
+  border-color: rgba(255, 194, 71, 0.6);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Explore header ─────────────────────────────────────────────── */
 
 .explore-header {
   display: flex;
@@ -242,10 +416,70 @@ input[type="search"] {
   animation: fadeInUp 420ms ease both;
 }
 
-.card p {
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag {
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(57, 211, 223, 0.3);
+  background: rgba(57, 211, 223, 0.07);
+  color: var(--accent-2);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.card p,
+.card-desc {
   margin: 0.35rem 0 0;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+}
+
+.card-slug {
+  font-family: "IBM Plex Mono", "Fira Code", monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-btn {
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease, background 150ms ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.copy-btn:hover {
+  border-color: rgba(255, 194, 71, 0.5);
+  color: var(--accent);
+  background: rgba(255, 194, 71, 0.08);
 }
 
 .card a {
@@ -265,9 +499,33 @@ input[type="search"] {
 }
 
 .footer {
-  padding: 0 0 2.4rem;
+  padding: 1.5rem 0 2.4rem;
   color: var(--muted);
   text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 150ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  margin: 0;
 }
 
 .visually-hidden {

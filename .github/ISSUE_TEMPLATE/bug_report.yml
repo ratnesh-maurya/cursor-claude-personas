@@ -1,0 +1,55 @@
+name: Bug report
+description: Report unexpected behavior in a persona or skill
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Fill in as much detail as you can.
+
+  - type: input
+    id: persona
+    attributes:
+      label: Persona folder
+      description: Which persona folder is affected?
+      placeholder: "e.g. senior-python-developer"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tool
+    attributes:
+      label: AI tool
+      description: Which tool are you using the persona with?
+      options:
+        - Claude Code
+        - Cursor
+        - VS Code (GitHub Copilot)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: What happened? What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Copy `senior-python-developer/.claude` into project
+        2. Open a new session
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: OS, tool version, or any other relevant details

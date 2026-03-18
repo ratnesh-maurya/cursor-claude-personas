@@ -1,25 +1,37 @@
 # Security Policy
 
-## Supported Versions
+## Supported versions
 
-This repository is template/configuration focused. Security updates are applied on the `main` branch.
+This repository contains configuration templates, not executable software.
+Security updates are applied on the `main` branch.
 
-## Reporting a Vulnerability
+| Version | Supported |
+| --- | --- |
+| `main` | Yes |
+| older branches | No |
 
-If you discover a security issue (for example, unsafe scripts, malicious instructions, or sensitive data leakage patterns), please report it responsibly.
+## Reporting a vulnerability
 
-Include:
+**Please do not open a public GitHub issue for security reports.**
 
-- affected path(s)
+Use GitHub's private vulnerability reporting instead:
+[Report a vulnerability](https://github.com/ratnesh-maurya/cursor-claude-personas/security/advisories/new)
+
+If private reporting is unavailable, contact the maintainer directly via the email on the GitHub profile.
+
+Include in your report:
+
+- affected file path(s) or persona folder
 - reproducible steps
 - potential impact
 - suggested fix (optional)
 
-Please avoid posting sensitive exploit details publicly before maintainers can review and patch.
+Maintainers will acknowledge the report within 5 business days and aim to resolve confirmed issues within 30 days.
 
-## Security Notes for This Repository
+## Security notes for this repository
 
-- Review skills before running any scripts referenced in skill docs.
-- Do not commit secrets to persona folders.
-- Keep hidden config directories scoped to intended projects.
-- Validate third-party inspirations and imported snippets before adoption.
+- Review skills before running any scripts referenced in skill docs
+- Do not commit secrets, tokens, or API keys to persona folders
+- Keep hidden config directories (`.claude/`, `.cursor/`) scoped to intended projects
+- Validate third-party snippets and imported skills before adopting them
+- The `.gitignore` intentionally excludes `.cursor` at the root to avoid leaking local tool config

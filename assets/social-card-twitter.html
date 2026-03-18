@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Twitter Card — cursor-claude-personas</title>
+<style>
+  /* Screenshot at 1200x675 (Twitter summary_large_image) */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 675px;
+    overflow: hidden;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    color: #f5f4ef;
+    background:
+      radial-gradient(circle at 8% 10%, #1a3158 0%, transparent 30%),
+      radial-gradient(circle at 90% 80%, #1e4f71 0%, transparent 25%),
+      #080d18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+  }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-radial-gradient(circle at 0 0, #fff 0, #fff 0.5px, transparent 1px, transparent 4px);
+    pointer-events: none;
+  }
+
+  .count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(100deg, #ffc247, #ff9d2a);
+    font-size: 32px;
+    font-weight: 800;
+    color: #0a1628;
+  }
+
+  h1 {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  h1 span {
+    background: linear-gradient(100deg, #ffc247, #ff9d2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 26px;
+    color: #acb6c8;
+    max-width: 750px;
+    line-height: 1.4;
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 14px 36px;
+    border-radius: 999px;
+    background: linear-gradient(100deg, #ffc247, #ff9d2a);
+    color: #0a1628;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+  }
+
+  .url {
+    position: absolute;
+    bottom: 30px;
+    color: #6b7a94;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="count">38</div>
+
+  <h1>cursor-claude-<span>personas</span></h1>
+
+  <p class="subtitle">
+    Role-based AI persona packs for Claude Code, Cursor & VS Code.<br>
+    Clone. Copy. Code.
+  </p>
+
+  <div class="cta">Star on GitHub</div>
+
+  <div class="url">github.com/ratnesh-maurya/cursor-claude-personas</div>
+</body>
+</html>

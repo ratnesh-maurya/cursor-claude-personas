@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OG Image — cursor-claude-personas</title>
+<style>
+  /* Screenshot this at 1200x630 for OG/Twitter/GitHub social preview */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    color: #f5f4ef;
+    background:
+      radial-gradient(circle at 5% 0%, #1a3158 0%, transparent 35%),
+      radial-gradient(circle at 92% 15%, #1e4f71 0%, transparent 30%),
+      linear-gradient(168deg, #050913, #080d18 60%, #0c1b36 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    position: relative;
+  }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-radial-gradient(circle at 0 0, #fff 0, #fff 0.5px, transparent 1px, transparent 4px);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 194, 71, 0.12);
+    border: 1px solid rgba(255, 194, 71, 0.4);
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffc247;
+    width: fit-content;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    max-width: 800px;
+  }
+
+  h1 span {
+    background: linear-gradient(100deg, #ffc247, #ff9d2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 26px;
+    color: #acb6c8;
+    max-width: 700px;
+    line-height: 1.4;
+    margin-bottom: 36px;
+  }
+
+  .tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: rgba(57, 211, 223, 0.1);
+    border: 1px solid rgba(57, 211, 223, 0.3);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 15px;
+    color: #39d3df;
+    font-weight: 500;
+  }
+
+  .cards-preview {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mini-card {
+    width: 260px;
+    padding: 16px 20px;
+    border: 1px solid rgba(207, 224, 255, 0.15);
+    border-radius: 14px;
+    background: rgba(13, 25, 47, 0.8);
+  }
+
+  .mini-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .mini-card-desc {
+    font-size: 13px;
+    color: #acb6c8;
+    line-height: 1.35;
+  }
+
+  .mini-card:nth-child(1) { border-color: rgba(255, 194, 71, 0.35); }
+  .mini-card:nth-child(2) { border-color: rgba(57, 211, 223, 0.35); }
+  .mini-card:nth-child(3) { border-color: rgba(255, 194, 71, 0.2); }
+  .mini-card:nth-child(4) { border-color: rgba(57, 211, 223, 0.2); }
+
+  .footer-row {
+    position: absolute;
+    bottom: 40px;
+    left: 80px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #6b7a94;
+    font-size: 16px;
+  }
+
+  .footer-row span { color: #acb6c8; }
+</style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="badge">38 Personas &bull; MIT Licensed</div>
+
+  <h1>cursor-claude-<br><span>personas</span></h1>
+
+  <p class="subtitle">
+    Role-based AI persona packs for Claude Code, Cursor, and VS Code.
+    Copy a folder. Reload. Code.
+  </p>
+
+  <div class="tags">
+    <span class="tag">frontend</span>
+    <span class="tag">backend</span>
+    <span class="tag">security</span>
+    <span class="tag">devops</span>
+    <span class="tag">ai/ml</span>
+    <span class="tag">mobile</span>
+    <span class="tag">design</span>
+  </div>
+
+  <div class="cards-preview">
+    <div class="mini-card">
+      <div class="mini-card-title">Senior Python Developer</div>
+      <div class="mini-card-desc">APIs, automation, FastAPI patterns</div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-title">Security Engineer</div>
+      <div class="mini-card-desc">Threat modeling, hardening, audits</div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-title">DevOps / Cloud Engineer</div>
+      <div class="mini-card-desc">CI/CD, Kubernetes, IaC</div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-card-title">System Architect</div>
+      <div class="mini-card-desc">Service boundaries, scalability</div>
+    </div>
+  </div>
+
+  <div class="footer-row">
+    github.com/ratnesh-maurya/<span>cursor-claude-personas</span>
+  </div>
+</body>
+</html>
