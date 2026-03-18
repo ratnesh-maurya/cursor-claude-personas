@@ -148,6 +148,31 @@ Persona folder shape:
     └── skills/
 ```
 
+## Automation and GitHub Actions
+
+This repo includes a small set of GitHub Actions workflows under `.github/workflows`:
+
+- **`ci.yml`**: Basic CI pipeline that checks out the code, sets up Node.js, installs npm dependencies if a `package.json` is present, and runs lint/tests when configured.
+- **`deploy-pages.yml`**: Deploys the `site/` directory to GitHub Pages on pushes to `main`.
+- **`labels-and-comments.yml`**: Adds labels to pull requests based on their title keywords and posts a friendly guidance comment on first-time contributor PRs (no AI involved).
+- **`maintenance.yml`**: Runs weekly to mark long-inactive issues/PRs as stale and close them after a grace period, with clear explanatory comments.
+
+All of these workflows are intentionally simple and AI-free so they can run in any fork without extra configuration.
+
+## GitHub graphs and activity
+
+- **Contributors & commit history**: View the GitHub contributors graph for this repo at  
+  `https://github.com/OWNER/cursor-claude-personas/graphs/contributors`  
+  (replace `OWNER` with the actual GitHub username or org if you’ve forked this repository).
+
+- **Optional README activity graph embed (for forks)** – you can add a live activity graph badge to your own fork’s README:
+
+```markdown
+[![GitHub activity graph](https://github-readme-activity-graph.vercel.app/graph?username=OWNER&repo=cursor-claude-personas&theme=github-compact)](https://github.com/OWNER/cursor-claude-personas/graphs/contributors)
+```
+
+Replace `OWNER` with your GitHub username or organization. You can also tweak the `theme` parameter; see the `github-readme-activity-graph` project for more theme options.
+
 ## Validation commands
 
 Check `.claude` and `.cursor` parity for every persona:
