@@ -60,6 +60,20 @@ cp -R "$PERSONA/.cursor" "$TARGET/"
 
 Most tools reload instructions at session start.
 
+## “I don’t want to type /skills”
+
+Some tools expose skills as slash-commands, but you can make behavior effectively automatic by relying on **rules** that tell the agent to proactively consult local skill docs.
+
+- **Cursor**: copy `.cursor/` into your project root. Cursor rules are always-on, so a rule can instruct the agent to read matching `SKILL.md` files without you typing `/...`.
+- **Claude-style**: copy `.claude/` into your project root. Rules can also instruct automatic skill consultation.
+
+This repo now includes an **auto-skill router rule** you can copy:
+
+- `.cursor/rules/rules--auto-skill-router.md`
+- `.claude/rules/rules--auto-skill-router.md`
+
+If you’re copying a persona folder, you can also copy these two files into the target project’s `.cursor/rules/` and `.claude/rules/` to get the same “no slash commands” behavior.
+
 ## Compatibility matrix
 
 | Tool | Rules | Skills | Agents | Recommended copy |
