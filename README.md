@@ -4,6 +4,13 @@ Role-based AI persona packs for coding workflows.
 
 Inspiration: https://github.com/sickn33/antigravity-awesome-skills
 
+## Why this repo
+
+- Portable persona packs you can copy directly into any project.
+- Mirrored `.claude` and `.cursor` structures for predictable behavior.
+- Wide role coverage across engineering, product, design, security, and growth.
+- Minimal setup: copy folders, reopen session, start working.
+
 ## What this repo is
 
 This repository contains persona folders (for example `senior-python-developer`, `security-engineer`, `ui-ux-designer`) that you can copy into another project.
@@ -14,6 +21,22 @@ Each persona includes:
 - `.cursor` configs
 
 The goal is simple: copy a persona's hidden folders to your project root and get domain-tuned AI behavior.
+
+## Choose a persona quickly
+
+| Persona | Best for | Copy path | Notes |
+|---|---|---|---|
+| `senior-frontend-developer` | React/TypeScript UI systems | `senior-frontend-developer/` | UI architecture and frontend quality |
+| `senior-python-developer` | APIs, automation, data workflows | `senior-python-developer/` | Strong backend and scripting focus |
+| `security-engineer` | Threat modeling, hardening, audits | `security-engineer/` | Security-first guidance |
+| `system-architect` | Service boundaries and scalability | `system-architect/` | High-level design and tradeoffs |
+| `technical-writer` | Docs, onboarding, API clarity | `technical-writer/` | Documentation quality and consistency |
+
+Browse all persona folders from repo root:
+
+```bash
+ls -1
+```
 
 ## Quick usage
 
@@ -37,6 +60,14 @@ cp -R "$PERSONA/.cursor" "$TARGET/"
 
 Most tools reload instructions at session start.
 
+## Compatibility matrix
+
+| Tool | Rules | Skills | Agents | Recommended copy |
+|---|---|---|---|---|
+| Claude Code | Yes (`.claude/rules`) | Yes (`.claude/skills`) | Yes (`.claude/agents`, when present) | `.claude` |
+| Cursor | Yes (`.cursor/rules`) | Yes (`.cursor/skills`) | Through project instruction files/patterns | `.cursor` + `.claude` |
+| VS Code (GitHub Copilot) | Uses compatible instruction paths | Works with compatible skill/rule layouts | Through Copilot customization flow | `.claude` (plus optional `.github/copilot-instructions.md`) |
+
 ## Usage by tool
 
 ### Claude Code
@@ -54,6 +85,16 @@ Most tools reload instructions at session start.
 - Works with Claude-compatible paths in VS Code customization flow
 - Recommended minimal setup for this repo style: copy `.claude`
 - If you also want native Copilot repository instructions, add `.github/copilot-instructions.md` in your target project
+
+## Starter personas (recommended)
+
+If you are not sure where to begin, start with one of these:
+
+1. `senior-frontend-developer` for modern web frontend work
+2. `senior-python-developer` for general backend and automation
+3. `security-engineer` for security-sensitive projects
+4. `system-architect` for greenfield system design
+5. `technical-writer` for docs-heavy repositories
 
 ## Applicable repository skills
 
