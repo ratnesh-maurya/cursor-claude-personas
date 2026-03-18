@@ -1,0 +1,33 @@
+{
+  "personas": [
+    "3d-frontend-developer",
+    "ai-ml-engineer",
+    "blog-website-developer",
+    "data-engineer",
+    "devops-cloud-engineer",
+    "ecommerce-specialist",
+    "fullstack-saas-mvp",
+    "game-developer",
+    "marketing-automation",
+    "mobile-developer",
+    "n8n-automation-specialist",
+    "odoo-erp-specialist",
+    "open-source-maintainer",
+    "qa-testing-engineer",
+    "security-engineer",
+    "senior-dotnet-developer",
+    "senior-elixir-developer",
+    "senior-frontend-developer",
+    "senior-golang-developer",
+    "senior-java-developer",
+    "senior-python-developer",
+    "senior-rust-developer",
+    "seo-specialist",
+    "system-architect",
+    "system-designer",
+    "technical-writer",
+    "ui-ux-designer",
+    "voice-ai-developer",
+    "wordpress-specialist"
+  ]
+}
