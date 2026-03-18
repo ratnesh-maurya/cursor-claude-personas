@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Card — cursor-claude-personas</title>
+<style>
+  /* Screenshot at 1200x627 (LinkedIn link preview) */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 627px;
+    overflow: hidden;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    color: #f5f4ef;
+    background:
+      radial-gradient(circle at 5% 0%, #1a3158 0%, transparent 35%),
+      radial-gradient(circle at 95% 100%, #1e4f71 0%, transparent 30%),
+      linear-gradient(168deg, #050913, #080d18 60%, #0c1b36 100%);
+    display: flex;
+    position: relative;
+  }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-radial-gradient(circle at 0 0, #fff 0, #fff 0.5px, transparent 1px, transparent 4px);
+    pointer-events: none;
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 64px;
+  }
+
+  .eyebrow {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #39d3df;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.12;
+    margin-bottom: 20px;
+  }
+
+  h1 span {
+    background: linear-gradient(100deg, #ffc247, #ff9d2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 22px;
+    color: #acb6c8;
+    line-height: 1.45;
+    max-width: 500px;
+  }
+
+  .right {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 40px 40px 0;
+    gap: 14px;
+  }
+
+  .persona-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .chip {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(207, 224, 255, 0.15);
+    background: rgba(13, 25, 47, 0.75);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .chip small {
+    display: block;
+    font-weight: 400;
+    font-size: 11px;
+    color: #acb6c8;
+    margin-top: 3px;
+  }
+
+  .chip--gold { border-color: rgba(255, 194, 71, 0.3); }
+  .chip--teal { border-color: rgba(57, 211, 223, 0.3); }
+
+  .more-chip {
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: rgba(255, 194, 71, 0.1);
+    border: 1px solid rgba(255, 194, 71, 0.3);
+    color: #ffc247;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .footer-row {
+    position: absolute;
+    bottom: 28px;
+    left: 64px;
+    color: #6b7a94;
+    font-size: 15px;
+  }
+
+  .footer-row span { color: #acb6c8; }
+</style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="left">
+    <div class="eyebrow">Open Source &bull; MIT Licensed</div>
+    <h1>cursor-claude-<br><span>personas</span></h1>
+    <p class="subtitle">
+      38 role-based AI persona packs for Claude Code, Cursor, and VS Code.
+      Copy a folder. Reload your editor. Done.
+    </p>
+  </div>
+
+  <div class="right">
+    <div class="persona-row">
+      <div class="chip chip--gold">Python Dev<small>APIs, FastAPI</small></div>
+      <div class="chip chip--teal">Security<small>Threat model</small></div>
+    </div>
+    <div class="persona-row">
+      <div class="chip chip--teal">DevOps<small>K8s, IaC</small></div>
+      <div class="chip chip--gold">Frontend<small>React, TS</small></div>
+    </div>
+    <div class="persona-row">
+      <div class="chip chip--gold">AI / ML<small>Pipelines</small></div>
+      <div class="chip chip--teal">Architect<small>System design</small></div>
+    </div>
+    <div class="persona-row">
+      <div class="chip chip--teal">Mobile<small>RN, Flutter</small></div>
+      <div class="chip chip--gold">Rust Dev<small>Systems, WASM</small></div>
+    </div>
+    <div class="more-chip">+30 more personas</div>
+  </div>
+
+  <div class="footer-row">
+    github.com/ratnesh-maurya/<span>cursor-claude-personas</span>
+  </div>
+</body>
+</html>

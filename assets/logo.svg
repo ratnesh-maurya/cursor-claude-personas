@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#132244"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffc247"/>
+      <stop offset="100%" stop-color="#ff9d2a"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#39d3df"/>
+      <stop offset="100%" stop-color="#2ab8c4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="80" fill="url(#bg)"/>
+
+  <!-- Persona stack — three offset cards -->
+  <!-- Back card -->
+  <rect x="120" y="100" width="220" height="280" rx="20" fill="none" stroke="#2a4470" stroke-width="3" opacity="0.4"/>
+  <!-- Middle card -->
+  <rect x="146" y="84" width="220" height="280" rx="20" fill="none" stroke="#3d6098" stroke-width="3" opacity="0.6"/>
+  <!-- Front card -->
+  <rect x="172" y="68" width="220" height="280" rx="20" fill="#0d192f" stroke="url(#teal)" stroke-width="3"/>
+
+  <!-- Card content — representing rules/skills -->
+  <!-- User/persona icon circle -->
+  <circle cx="282" cy="130" r="28" fill="url(#accent)"/>
+  <!-- Head silhouette -->
+  <circle cx="282" cy="120" r="12" fill="#0a1628"/>
+  <ellipse cx="282" cy="143" rx="16" ry="10" fill="#0a1628"/>
+
+  <!-- Rule lines on card -->
+  <rect x="210" y="176" width="144" height="6" rx="3" fill="#39d3df" opacity="0.8"/>
+  <rect x="210" y="196" width="120" height="6" rx="3" fill="#39d3df" opacity="0.5"/>
+  <rect x="210" y="216" width="132" height="6" rx="3" fill="#39d3df" opacity="0.3"/>
+
+  <!-- Skill blocks on card -->
+  <rect x="210" y="248" width="60" height="24" rx="6" fill="url(#accent)" opacity="0.9"/>
+  <rect x="280" y="248" width="74" height="24" rx="6" fill="url(#accent)" opacity="0.6"/>
+  <rect x="210" y="280" width="80" height="24" rx="6" fill="url(#accent)" opacity="0.4"/>
+
+  <!-- Copy arrow — bottom right -->
+  <g transform="translate(350, 340)">
+    <path d="M0,0 L40,0 L40,-40" fill="none" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="40,-50 50,-36 30,-36" fill="url(#accent)"/>
+  </g>
+
+  <!-- "38" badge — top right -->
+  <circle cx="400" cy="80" r="32" fill="url(#accent)"/>
+  <text x="400" y="88" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="24" fill="#0a1628">38</text>
+
+  <!-- Bottom text -->
+  <text x="256" y="420" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="28" fill="#f5f4ef" letter-spacing="1">cursor-claude</text>
+  <text x="256" y="454" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="28" fill="url(#accent)" letter-spacing="1">personas</text>
+</svg>

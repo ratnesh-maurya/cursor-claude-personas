@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Hunt Gallery — cursor-claude-personas</title>
+<style>
+  /* Screenshot at 1270x760 (Product Hunt gallery image) */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1270px;
+    height: 760px;
+    overflow: hidden;
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    color: #f5f4ef;
+    background:
+      radial-gradient(circle at 10% 5%, #1a3158 0%, transparent 30%),
+      radial-gradient(circle at 85% 90%, #1e4f71 0%, transparent 25%),
+      #080d18;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    position: relative;
+  }
+
+  .noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: repeating-radial-gradient(circle at 0 0, #fff 0, #fff 0.5px, transparent 1px, transparent 4px);
+    pointer-events: none;
+  }
+
+  .headline {
+    text-align: center;
+  }
+
+  .headline h1 {
+    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .headline h1 span {
+    background: linear-gradient(100deg, #ffc247, #ff9d2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .headline p {
+    font-size: 22px;
+    color: #acb6c8;
+  }
+
+  /* Three-step flow */
+  .steps {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+  }
+
+  .step {
+    width: 340px;
+    padding: 28px 28px 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(207, 224, 255, 0.15);
+    background: rgba(13, 25, 47, 0.7);
+    position: relative;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(100deg, #ffc247, #ff9d2a);
+    color: #0a1628;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .step h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .step p {
+    font-size: 15px;
+    color: #acb6c8;
+    line-height: 1.45;
+  }
+
+  .step code {
+    display: block;
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.35);
+    font-family: 'IBM Plex Mono', 'Fira Code', monospace;
+    font-size: 13px;
+    color: #39d3df;
+    line-height: 1.5;
+    white-space: pre;
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    color: #ffc247;
+    font-size: 28px;
+    font-weight: 300;
+    opacity: 0.5;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .badge {
+    padding: 6px 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(57, 211, 223, 0.25);
+    background: rgba(57, 211, 223, 0.07);
+    font-size: 14px;
+    color: #39d3df;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="headline">
+    <h1>cursor-claude-<span>personas</span></h1>
+    <p>38 AI persona packs for Claude Code, Cursor & VS Code</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Clone</h3>
+      <p>Clone the repo to get all 38 persona packs.</p>
+      <code>git clone github.com/ratnesh-maurya/
+  cursor-claude-personas.git</code>
+    </div>
+
+    <div class="arrow">&rarr;</div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Copy</h3>
+      <p>Copy .claude/ or .cursor/ into your project root.</p>
+      <code>cp -R senior-python-developer/
+  .claude/ ~/my-project/</code>
+    </div>
+
+    <div class="arrow">&rarr;</div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Code</h3>
+      <p>Reload your editor. The AI becomes a domain specialist.</p>
+      <code>Rules load automatically.
+Skills auto-trigger.
+Zero prompting needed.</code>
+    </div>
+  </div>
+
+  <div class="badge-row">
+    <span class="badge">frontend</span>
+    <span class="badge">backend</span>
+    <span class="badge">security</span>
+    <span class="badge">devops</span>
+    <span class="badge">ai/ml</span>
+    <span class="badge">mobile</span>
+    <span class="badge">architecture</span>
+    <span class="badge">design</span>
+    <span class="badge">+30 more</span>
+  </div>
+</body>
+</html>
